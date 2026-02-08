@@ -3,6 +3,7 @@
 #include<string>
 #include "app/income/connector.h"
 #include "app/Report/connect.h"
+#include "app/capital/con.h"
 
 using namespace std;
 
@@ -87,6 +88,7 @@ int main(){
     }
     case 0:
      cout <<  BLUE <<"Good bye" << RESET <<endl;
+     break;
     default:
     cout << RED << "Invalid Input!" << RESET <<endl;
         break;
@@ -126,7 +128,6 @@ bool UserRegister(){
   fin.close();
   return val;
 }
-
 
 void CheckUser(string user, int pass) {
     ifstream fin("DB.txt");
@@ -170,13 +171,12 @@ cout<<"            |___|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|___|     " <<endl;
 cout<<"           (_____)                             (_____)   " <<endl;
 cout <<RED;
 cout <<"                          yotor tracking      "<<endl;
-cout << "                              system                     "<<BLUE<<" Version: 1.00" <<endl;
+cout << "                              system                     "<<BLUE<<" Version: 1.10" <<endl;
      cout << RESET;       
 }
 
 void menuVIP(string newRole, string user){
     globals info;
-    
 if(newRole == "Admin"){
         system("clear");
         logo2(newRole);
@@ -184,7 +184,7 @@ if(newRole == "Admin"){
     do
     {
         cout << " "<<endl;
-       cout << " 1. Track Investments \n 2. Track Income \n 3. Read Reports \n 0.Logout \nEnter your choise: ";
+       cout << " 1. Track Investments \n 2. Track Income \n 3. Capital \n 4. Read Reports \n 0.Logout \nEnter your choise: ";
        cin>>Vchoise;
     switch (Vchoise)
     {
@@ -198,7 +198,13 @@ if(newRole == "Admin"){
     system("clear");
         infoU();
         break;
-     case 3:
+    
+    case 3:
+    system("clear");
+        capTracker();
+        break;
+    
+     case 4:
      system("clear");
         Reporter();
         break;
@@ -212,3 +218,6 @@ if(newRole == "Admin"){
     } while (Vchoise != 0);
 }       
 }
+
+
+

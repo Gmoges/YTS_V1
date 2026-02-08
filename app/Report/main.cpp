@@ -24,14 +24,20 @@ void DayRepoGenerate(){
         while(fin>>week>>amt){
             cout << GREEN;
             cout << " "<<endl;
-            cout << "one the date: " << week << " you earn: "<<amt<<endl;
+            cout << "on the date: " << week << " you earn: "<<amt<<endl;
             sum = amt + sum;
         } 
-        cout << " "<<endl;
-         cout << YELLOW;
-        cout << "total earned money is: " << sum <<endl;
-        cout << RESET;
-        cout << " "<<endl;
+            cout << " "<<endl;
+            cout << YELLOW;
+            cout << "total earned money is: " << sum <<endl;
+            cout << RESET;
+            cout << " "<<endl;
+            cout <<RED;
+            cout << " money leaft for next step: "<<10000-sum<<endl;
+            cout << " "<<endl;
+            cout << "The total money leaft for free cap is: " << 16000 - sum<<endl;
+            cout << " "<<endl;
+            cout <<RESET;
     }else{
         cout << RED <<"404"<<endl;
         cout <<RESET;
@@ -41,12 +47,14 @@ void DayRepoGenerate(){
 
 void WeekRepo(){
      ifstream fin("WeekTracker.txt");
-
     if(fin.is_open()){
         int sum = 0;
         string Wnum;
         int amt;
+         cout << " "<<endl;
+         cout << BLUE;
         cout << " Week                   amount of income "<<endl;
+        cout << RESET;
         while(fin>>Wnum>>amt){
             cout << GREEN;
             cout << " "<<endl;
